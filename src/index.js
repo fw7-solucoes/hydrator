@@ -2,6 +2,8 @@
  * Extract fields from a model and return a new object.
  */
 const hydrate = (model, ignoredFields = []) => {
+  if (!model) return null
+
   const modelFields = Reflect.ownKeys(model.dataValues)
 
   // Removing ignored fields.
